@@ -1,0 +1,11 @@
+<form [formGroup]="imageUpload" (ngSubmit)="submit()">
+  <ion-item>
+    <input formControlName="logo" (change)="selectedFile($event)" type="file">
+  </ion-item>
+  <ion-item>
+    <input formControlName="cover" (change)="selectedFile($event)" type="file">
+  </ion-item>
+
+  <app-progress-bar [progress]=uploadProgress.value></app-progress-bar>
+  <ion-button [disabled]="!imageUpload.valid" type="submit">Submit</ion-button>
+</form>
